@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Mail
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -30,6 +29,7 @@ fun ContactScreen() {
     val email = "clement.roncolato.dev@outlook.com"
     val telephone = "+33 6 95 32 02 49"
     val linkedinUrl = "https://www.linkedin.com/in/cl%C3%A9ment-roncolato-878239232/"
+    val privacyPolicyUrl = "https://croncolato.github.io/CVClementRONCOLATO/privacy-policy.html"
     val scrollState = rememberScrollState()
 
     Column(
@@ -135,6 +135,21 @@ fun ContactScreen() {
             style = MaterialTheme.typography.bodySmall,
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurface
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            text = "Politique de confidentialité",
+            style = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.primary),
+            textDecoration = TextDecoration.Underline,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .clickable {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(privacyPolicyUrl))
+                    context.startActivity(intent)
+                }
+                .padding(4.dp)
         )
 
         Spacer(modifier = Modifier.height(64.dp))
