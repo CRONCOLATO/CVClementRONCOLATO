@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ContactScreen() {
     val context = LocalContext.current
-    val email = "clement.roncolato@epfedu.fr"
+    val email = "clement.roncolato.dev@outlook.com"
     val telephone = "+33 6 95 32 02 49"
     val linkedinUrl = "https://www.linkedin.com/in/cl%C3%A9ment-roncolato-878239232/"
     val scrollState = rememberScrollState()
@@ -168,7 +168,7 @@ fun ContactInfoItem(label: String, value: String, onClick: () -> Unit) {
 fun envoyerEmail(context: Context) {
     val intent = Intent(Intent.ACTION_SEND).apply {
         type = "message/rfc822"
-        putExtra(Intent.EXTRA_EMAIL, arrayOf("clement.roncolato@epfedu.fr"))
+        putExtra(Intent.EXTRA_EMAIL, arrayOf("clement.roncolato.dev@outlook.com"))
         putExtra(Intent.EXTRA_SUBJECT, "Demande de contact")
         putExtra(Intent.EXTRA_TEXT, "Bonjour, je souhaite vous contacter pour ...")
     }
